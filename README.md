@@ -17,9 +17,14 @@ Fonctionne avec les parcours de rentrée, les parcours par thème, les campagnes
 - Facultativement utilise la bibliothèque xhtml2pdf pour générer les fichiers pdf
 
 ### Exemples
-- Parcours de rentrée
+#### Parcours de rentrée
+
 ![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-r%C3%A9sultats-parcours-rentr%C3%A9e.jpg) 
-- Parcours thématique
+
+#### Parcours thématique
+
 ![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-r%C3%A9sultats-parcours-th%C3%A9matique.jpg) 
-- Collecte de profil
-![Capture d'écran résultats d'un parcours de rentrée](hCapture-%C3%A9cran-collecte-profils.jpg) 
+
+#### Collecte de profil
+
+![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-collecte-profils.jpg) 
