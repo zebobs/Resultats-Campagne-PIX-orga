@@ -4,7 +4,8 @@
 Fournir des fichiers des résultats de l'avancée des campagnes PIX orga :
 - lisibles,
 - en html (et/ou pdf),
-- en particulier, pour les enseignants non inscrits dans Pix orga
+- en particulier, pour les enseignants non inscrits dans Pix orga,
+Fonctionne avec les parcours de rentrée, les parcours par thème, les campagnes de collecte de profils
 
 ### Fonctionnement
 - Déposer les fichiers csv (du jour)  dans le même dossier que le programme py
