@@ -16,4 +16,10 @@ Fonctionne avec les parcours de rentrée, les parcours par thème, les campagnes
 - Utilise la bibliothèque pandas (souvent présente dans les packs python)
 - Facultativement utilise la bibliothèque xhtml2pdf pour générer les fichiers pdf
 
- ![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-r%C3%A9sultats-parcours-rentr%C3%A9e.jpg) 
+### Exemples
+- Parcours de rentrée
+![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-r%C3%A9sultats-parcours-rentr%C3%A9e.jpg) 
+- Parcours thématique
+![Capture d'écran résultats d'un parcours de rentrée](Capture-%C3%A9cran-r%C3%A9sultats-parcours-th%C3%A9matique.jpg) 
+- Collecte de profil
+![Capture d'écran résultats d'un parcours de rentrée](hCapture-%C3%A9cran-collecte-profils.jpg) 
