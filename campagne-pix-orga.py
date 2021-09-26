@@ -28,7 +28,7 @@ for chemin_fichier in liste_fichiers :
             titre = '-'.join(nom_fichier[:-5])
             titre += '-'+date_du_jour
             liste_fichier_afaire.append(chemin_fichier)
-            resultats = pd.read_csv(chemin_fichier,sep=';',quotechar='"')
+            resultats = pd.read_csv(chemin_fichier,sep=';',quotechar='"',decimal=',')
 
             resultats = resultats.sort_values(by=['Classe', 'Nom du Participant','Prénom du Participant'])
             
@@ -48,7 +48,6 @@ for chemin_fichier in liste_fichiers :
                 
             #Mise en forme colonne progression
             if '% de progression' in resultats.columns :
-                resultats['% de progression'] = resultats['% de progression'].str.replace(',','.')
                 resultats['% de progression'] = resultats['% de progression'].apply(lambda x: str(round(float(x)*100,1))+ '%')
             
             liste_des_classes = resultats['Classe'].unique()
