@@ -93,14 +93,14 @@ for chemin_fichier in liste_fichiers :
             
             for classe in liste_des_classes :
                 resultats_classe = resultats[resultats['Classe']==classe]
-                texte_HTML += '<h2>'+ classe +'</h2>'+ resultats_classe.to_html(index=False,na_rep=" ")+ '<div style="page-break-before:always">&nbsp;</div>'
+                texte_HTML += '<h2>'+ classe +'</h2>'+ resultats_classe.to_html(index=False,na_rep="-")+ '<div style="page-break-before:always">&nbsp;</div>'
 
             nom_du_fichier_HTML = titre +'.html'
             fichier_HTML = open(nom_du_fichier_HTML, "w")
             fichier_HTML.write(texte_HTML)
             fichier_HTML.close()
 
-# Décommenter pour ne pas générer un pdf
+# Décommenter pour générer un pdf
 # Ne pas oublier de Dé/Commenter la bibliothèque xhtml2pdf
 #            nom_du_fichier_PDF = titre + '.pdf'
 #            fichier_PDF = open(nom_du_fichier_PDF, "w+b")
