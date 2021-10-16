@@ -6,7 +6,7 @@ Fournir des fichiers des résultats de l'avancée des campagnes PIX orga :
 - en html (et/ou pdf),
 - en particulier, pour les enseignants non inscrits dans Pix orga,
 Fonctionne avec les parcours de rentrée, les parcours par thème, les campagnes de collecte de profils
-- optionnellement afficher les élèves n'ayant pas fait le parcours
+- optionnellement afficher les élèves n'ayant pas fait le parcours (déclencheur de l'affichage : 1 élève de la classe a fait le parcours)
 
 ### Fonctionnement
 - Déposer les fichiers csv (du jour)  dans le même dossier que le programme py
