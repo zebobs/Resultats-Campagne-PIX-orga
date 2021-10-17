@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 from datetime import datetime
-# Décommenter la ligne suivante pour ne générer de pdf
+# Décommenter la ligne suivante et la fin du programme pour générer des pdf
 # from xhtml2pdf import pisa
 
 # Le fichier csv eleves permet de connaitre les élèves n'ayant PAS fait la campagne
@@ -11,6 +11,7 @@ nom_fichier_csv_eleves="eleves.csv"
 colonne_nom="Nom"
 colonne_prenom="Prénom"
 colonne_classe="Classe"
+
 
 fichier_csv_eleves_present=False
 
@@ -28,11 +29,13 @@ formatageA4portrait = '<style type="text/css">'\
 
 # Lecture et formatage du fichier eleves.csv si il existe
 try:
-    eleves = pd.read_csv(nom_fichier_csv_eleves,sep=';',quotechar='"',usecols=[colonne_nom,colonne_prenom,colonne_classe])
+    eleves = pd.read_csv(nom_fichier_csv_eleves,sep=';',quotechar='"',usecols=[colonne_nom,colonne_prenom,colonne_classe],dtype={colonne_classe:'str'})
     try:
         eleves.rename(columns = {colonne_prenom:'Prénom du Participant',colonne_nom:'Nom du Participant',colonne_classe:'Classe'}, inplace = True)
         eleves = eleves[['Classe', 'Nom du Participant','Prénom du Participant']]
         eleves.sort_values(by=['Classe', 'Nom du Participant','Prénom du Participant'],inplace = True)
+        eleves.Classe = eleves.Classe.str.upper() 
+
         fichier_csv_eleves_present=True
     except:
         print("! Problème de formatage du fichier élèves :"+colonne_nom+";"+colonne_prenom+";"+colonne_classe)
@@ -58,7 +61,7 @@ for chemin_fichier in liste_fichiers :
             titre = '-'.join(nom_fichier[:-5])
             titre += '-'+date_du_jour
             liste_fichier_afaire.append(chemin_fichier)
-            resultats = pd.read_csv(chemin_fichier,sep=';',quotechar='"',decimal=',')
+            resultats = pd.read_csv(chemin_fichier,sep=';',quotechar='"',decimal=',',dtype={'Classe':'str'})
 
             resultats.sort_values(by=['Classe', 'Nom du Participant','Prénom du Participant'],inplace = True)
             
@@ -67,7 +70,11 @@ for chemin_fichier in liste_fichiers :
             #Simplification du tableau
             # Pour traiter les campagnes de rentrée de type "Pour commencer ..."
             if 'Palier obtenu (/3)' in resultats.columns :
-                resultats = resultats[[ 'Nom du Participant','Prénom du Participant','Classe','% de progression','Palier obtenu (/3)']]
+                resultats = resultats[[ 'Nom du Participant','Prénom du Participant','Classe','% de progression','Palier obtenu (/3)',"% maitrise de l'ensemble des acquis du profil"]]
+                resultats.rename(columns = {"% maitrise de l'ensemble des acquis du profil":'% de réussite'}, inplace = True)
+                masque=pd.notna(resultats['% de réussite'])
+                resultats['% de réussite'] = resultats['% de réussite'].where(masque,0)
+
                 masque=pd.notna(resultats['Palier obtenu (/3)'])
                 resultats['Palier obtenu (/3)'] = resultats['Palier obtenu (/3)'].where(masque,'Non finalisé')
             # Pour traiter la campagne de vérification des certifiables
@@ -75,13 +82,21 @@ for chemin_fichier in liste_fichiers :
                 resultats = resultats[[ 'Nom du Participant','Prénom du Participant','Classe','Nombre de pix total','Certifiable (O/N)','Nombre de compétences certifiables']]
             # Pour traiter les autres campagnes
             else :
-                resultats = resultats[[ 'Nom du Participant','Prénom du Participant','Classe','% de progression','Partage (O/N)']]
+                resultats = resultats[[ 'Nom du Participant','Prénom du Participant','Classe','% de progression','Partage (O/N)',"% maitrise de l'ensemble des acquis du profil"]]
                 resultats.rename(columns = {'Partage (O/N)':'Finalisé (O/N)'}, inplace = True)
+                resultats.rename(columns = {"% maitrise de l'ensemble des acquis du profil":'% de réussite'}, inplace = True)
+                masque=pd.notna(resultats['% de réussite'])
+                resultats['% de réussite'] = resultats['% de réussite'].where(masque,0)
                 
-            #Mise en forme colonne progression
+            #Mise en forme colonne en pourcentage
             if '% de progression' in resultats.columns :
                 #"resultats['% de progression'] = resultats['% de progression'].str.replace(',','.')
                 resultats['% de progression'] = resultats['% de progression'].apply(lambda x: str(round(float(x)*100,1))+ '%')
+            
+            if '% de réussite' in resultats.columns :
+                resultats['% de réussite'] = resultats['% de réussite'].apply(lambda x: str(round(float(x)*100,1))+ '%')
+
+            
             
             liste_des_classes = resultats['Classe'].unique()
 
@@ -100,7 +115,7 @@ for chemin_fichier in liste_fichiers :
             fichier_HTML.write(texte_HTML)
             fichier_HTML.close()
 
-# Décommenter pour générer un pdf
+# Décommenter pour générer des pdf
 # Ne pas oublier de Dé/Commenter la bibliothèque xhtml2pdf
 #            nom_du_fichier_PDF = titre + '.pdf'
 #            fichier_PDF = open(nom_du_fichier_PDF, "w+b")
