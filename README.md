@@ -23,6 +23,9 @@ Lancer le programme python exploitation-auto-pix-orga.py puis renseigner vos ide
 - Utilise les bibliothèque pandas et requests (le plus souvent présente dans les packs python ou facilement installables)
 - Facultativement utilise la bibliothèque xhtml2pdf pour générer les fichiers pdf. L'absence de la bibliothèque est géré automatiquement. Le programme produit un document hmtl parfaitement lisible et de façon bien plus rapide que le pdf.
 
+### À faire
+Traitement des certifications.
+
 ### Exemples
 #### Parcours de rentrée
 
