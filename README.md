@@ -21,7 +21,11 @@ Lancer le programme python exploitation-auto-pix-orga.py puis renseigner vos ide
 
 ### Bilbiothèques python
 - Utilise les bibliothèque pandas et requests (le plus souvent présente dans les packs python ou facilement installables)
-- Facultativement utilise la bibliothèque xhtml2pdf pour générer les fichiers pdf. L'absence de la bibliothèque est géré automatiquement. Le programme produit un document hmtl parfaitement lisible et de façon bien plus rapide que le pdf.
+- Facultativement utilise la bibliothèque xhtml2pdf pour générer les fichiers pdf. L'absence de la bibliothèque est gérée automatiquement. Le programme produit un document hmtl parfaitement lisible et de façon bien plus rapide que le pdf.
+
+### Données personnelles
+- Bien que ne créant pas de nouvelles données, l'usage de cette application nécessite une saisie sur le registre des traitements de données personnelles de l'établissement.
+- Par ailleurs, les fichiers produits ne doivent pas être conservés au-delà de le la finalité qui est d'informer les équipes pédagogiques de l'avancée des campagnes.
 
 ### À faire
 Traitement des certifications.
