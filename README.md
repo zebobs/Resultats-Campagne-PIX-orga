@@ -1,7 +1,7 @@
 # Exploitation automatique de pix-orga par classe en python
 
 ### Objectif 
-Fournir des fichiers des résultats de l'avancée des campagnes PIX orga :
+Fournir des fichiers des résultats de l'avancée des campagnes PIX orga et des certifications :
 - par classe,
 - lisibles,
 - en html (ou en pdf),
@@ -26,9 +26,16 @@ Lancer le programme python exploitation-auto-pix-orga.py puis renseigner vos ide
 ### Données personnelles
 - Bien que ne créant pas de nouvelles données, l'usage de cette application nécessite une saisie sur le registre des traitements de données personnelles de l'établissement.
 - Par ailleurs, les fichiers produits ne doivent pas être conservés au-delà de le la finalité qui est d'informer les équipes pédagogiques de l'avancée des campagnes.
+Pour faciliter l'effacements, les résultats sont regroupés dans un répertoire.
 
 ### À faire
-Traitement des certifications.
+Traitement des convocations aux certifications
+
+### Astuces
+Pour les utilisateurs expérimentés, le programme peut être utilisé comme bibliothèque d'un autre programme. Les arguments des fonctions peuvent être choisis avec plus de précision que dans la version "directe". Il y a par ailleurs une fonction réinitlalisation de mot de passe.
+
+### Licence
+Ce projet est sous licence GPL v3
 
 ### Exemples
 #### Parcours de rentrée
