@@ -32,7 +32,8 @@ Pour faciliter l'effacements, les résultats sont regroupés dans un répertoire
 Traitement des convocations aux certifications
 
 ### Astuces
-Pour les utilisateurs expérimentés, le programme peut être utilisé comme bibliothèque d'un autre programme. Les arguments des fonctions peuvent être choisis avec plus de précision que dans la version "directe". Il y a par ailleurs une fonction réinitlalisation de mot de passe.
+- Ne créer qu'une campagne de collecte de profils, le programme se charge de produire une synthèse regroupée par classe. 
+- Pour les utilisateurs expérimentés, le programme peut être utilisé comme bibliothèque d'un autre programme. Les arguments des fonctions peuvent être choisis avec plus de précision que dans la version "directe". Il y a par ailleurs une fonction réinitlalisation de mot de passe.
 
 ### Licence
 Ce projet est sous licence GPL v3
