@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> Depuis le 29/1/2024 PIX n'autorise les accès que par navigateur. (par une restriction sur le user-agent)
+> 
+> Le programme ne fonctionne donc plus.
+> 
+> voir https://github.com/zebobs/Resultats-Campagne-PIX-orga/issues/8
+
 # Exploitation automatique de pix-orga par classe en python
 
 ### Objectif 
