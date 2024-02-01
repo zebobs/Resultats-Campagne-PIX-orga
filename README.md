@@ -1,8 +1,9 @@
 > [!IMPORTANT]
 > Depuis le 29/1/2024 PIX n'autorise les accès que par navigateur. (par une restriction sur le user-agent)
+> 
 > Le 30/1/2024, un responsable PIX a confirmé sur https://communaute.pix.fr/ que l’accès aux API a été désactivé pour garantir le service.
 > 
-> Le programme ne fonctionne donc plus et le github ne sera pas mis à jour
+> **Le programme ne fonctionne donc plus et le github ne sera pas mis à jour**
 > 
 > voir https://github.com/zebobs/Resultats-Campagne-PIX-orga/issues/8
 
